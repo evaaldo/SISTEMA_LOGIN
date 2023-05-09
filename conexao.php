@@ -1,12 +1,14 @@
 <?php
 
-$usuario = 'root';
-$senha = '';
-$database =  'login';
-$host = 'localhost';
+$username = "root";
+$password = "";
+$database = "login_linkedin";
+$hostname = "localhost";
 
-$mysqli = new mysqli($host, $usuario, $senha, $database);
+$mysqli = new mysqli($hostname, $username, $password, $database);
 
 if($mysqli->error) {
-    die("Falha ao conectar ao banco de dados" . $mysqli->error);
+    exit("Falha ao conectar ao servidor. " . $mysqli->error);
 }
+
+?>
