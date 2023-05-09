@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,9 +14,9 @@
         <h1>Login</h1>
         <form method="post">
             <label for="usuario">Usuário</label>
-            <input type="text" name="usuario">
+            <input type="text" name="usuario" placeholder="Usuário">
             <label for="senha">Senha</label>
-            <input type="password" name="senha">
+            <input type="password" name="senha" placeholder="Senha">
             <input class="btn-login" type="submit" value="Entrar" name="login">
         </form>
         <a class="btn-redirecionar" href="cadastro.php">Não possui conta?</a>
@@ -40,7 +42,8 @@
             $quantidade = $sql_query->num_rows;
 
             if($quantidade == 1) {
-                echo "<script>alert('Bem-vindo!');</script>";
+                $_SESSION['usuario'] = $_POST['usuario'];
+                header('Location: home.php');                
             } else{
                 echo "<script>alert('Usuario não encontrado');</script>";
             }

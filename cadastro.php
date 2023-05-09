@@ -12,9 +12,9 @@
         <h1>Cadastro</h1>
         <form method="post">
             <label for="usuario">Usuário</label>
-            <input type="text" name="usuario">
+            <input type="text" name="usuario" placeholder="Usuário">
             <label for="senha">Senha</label>
-            <input type="password" name="senha">
+            <input type="password" name="senha" placeholder="Senha">
             <input class="btn-login" type="submit" value="Criar" name="cadastro">
         </form>
         <a class="btn-redirecionar" href="index.php">Voltar</a>

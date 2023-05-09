@@ -88,3 +88,16 @@ body {
 .btn-login:hover, .btn-redirecionar:hover {
     opacity: .7;
 }
+
+.home a {
+    color: var(--branco);
+    text-decoration: none;
+    background-color: var(--botao);
+    padding: .5em 1em;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.home a:hover {
+    opacity: .7;
+}
