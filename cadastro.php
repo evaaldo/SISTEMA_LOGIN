@@ -33,7 +33,16 @@
             $senha = $_POST['senha'];
 
             $sql_code = "INSERT INTO tb_contas (usuario, senha) VALUES ('$usuario', '$senha')";
-            $sql_query = $mysqli->query($sql_code) or exit($mysqli->error);           
+            $sql_query = $mysqli->query($sql_code) or exit($mysqli->error); 
+        
+            $consulta_linhas = "SELECT * FROM tb_contas WHERE usuario = '$usuario' AND senha = '$senha'";
+            $consulta_linhas_query = $mysqli->query($consulta_linhas) or exit($mysqli->error);
+
+            $quantidade = $consulta_linhas_query->num_rows or exit($mysqli->error);
+
+            if($quantidade == 1) {
+                echo "<script>alert('Conta criada com sucesso!');</script>";
+            } 
         }
     }
 
